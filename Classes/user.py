@@ -1,6 +1,6 @@
-from Classes.file_handler import load_from_csv
+from Mini_project_python_1.Classes.file_handler import load_from_csv
 
-file_name = "/Users/evasuissa/Desktop/ITC2/Python/day1-alone/csv_files/user.csv"
+file_name = "/Users/evasuissa/Desktop/ITC2/Python/day1-alone/Mini_project_python_1/csv_files/user.csv"
 
 def user_auth(name, password):
 
@@ -28,15 +28,3 @@ def user_auth(name, password):
 
 
 user_auth("amir", "123456")
-
-
-
-
-
-
-
-
-
-
-
-user_auth("eva", "lalala")
