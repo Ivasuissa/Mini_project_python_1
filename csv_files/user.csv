@@ -11,5 +11,8 @@ id,first_name,last_name,password,position,salary,role
 10,amira,bernsdtein,12345678,teacher,10,teacher
 11,amira,bernsdtein,12345678,teacher,10,teacher
 12,amira,bernsdtein,12345678,teacher,10,teacher
-13,amira,bernsdtein,12345678,teacher,10,teacher
-
+25,Eva,Suissa,12345678,writer,100,writer
+26,Eva,Suissa,12345678,writer,100,writer
+27,Elisa,Suissa,12345678,lawer,100,lawer
+28,Albert,Suissa,12345678,consultantr,10000,consultant
+29,Albert,Suissa,12345678,consultantr,10000,consultant
