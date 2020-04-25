@@ -60,8 +60,37 @@ class FileHandler:
             print("There is an error to append")
             print(error)
 
+    def remove_from_csv(self,file_name, id):
+        updated_list = []
+        same_id = False
+        try:
+            with open(file_name, newline='') as csv_file:
+                cvs_reader = csv.reader(csv_file, delimiter=',')
+                for row in cvs_reader:
+                    if row[0] != str(id):
+                        updated_list.append(row)
+                    else:
+                        same_id = True
+                        print("id didn't found")
+                with open(file_name, "w", newline="") as csv_file:
+                    Writer = csv.writer(csv_file)
+                    Writer.writerows(updated_list)
+                    self.log.add_to_log("Row with the same ID deleted")
+                return same_id
+        except Exception as error:
+            print("There is an error to remove")
+            print(error)
+
+    def update_csv(self, csv_file,id,row):
+        same_id = self.remove_from_csv(csv_file,id)
+        if same_id == True:
+            print(row)
+            self.append_to_csv(csv_file, row)
+            self.log.add_to_log("data updated ")
 
 file = FileHandler()
 
-file.append_to_csv("/Users/evasuissa/Desktop/ITC2/Python/day1-alone/Mini_project_python_1/csv_files/user.csv", ['29', 'Albert', 'Suissa', '12345678', 'consultantr', '10000', 'consultant'])
-file.load_from_csv("/Users/evasuissa/Desktop/ITC2/Python/day1-alone/Mini_project_python_1/csv_files/user.csv")
+#file.append_to_csv("/Users/evasuissa/Desktop/ITC2/Python/day1-alone/Mini_project_python_1/csv_files/user.csv", ['29', 'Albert', 'Suissa', '12345678', 'consultantr', '10000', 'consultant'])
+#file.load_from_csv("/Users/evasuissa/Desktop/ITC2/Python/day1-alone/Mini_project_python_1/csv_files/user.csv")
+#file.remove_from_csv("/Users/evasuissa/Desktop/ITC2/Python/day1-alone/Mini_project_python_1/csv_files/user.csv", 3)
+file.update_csv("/Users/evasuissa/Desktop/ITC2/Python/day1-alone/Mini_project_python_1/csv_files/user.csv",13, ['13','eva' , 'bernsdtein' , '12345678' , 'teacher' , '10' , 'teacher'])
